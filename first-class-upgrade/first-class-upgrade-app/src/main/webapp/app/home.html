@@ -1,0 +1,50 @@
+<!-- Static navbar -->
+<div class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">First Class</a>
+		</div>
+	</div>
+</div>
+
+<div data-ng-controller="UpgradeController as partialCtrl">
+	<div id="masthead">
+		<div class="container">
+			<div class="row">
+				<h2 class="well">Create A Request</h2>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="form-group">
+								<label for="firstName">First Name</label> <input type="text"
+									class="form-control" id="firstName"
+									data-ng-model="partialCtrl.person.firstName" /> <label
+									for="lastName">Last Name</label> <input type="text"
+									class="form-control" id="lastName"
+									data-ng-model="partialCtrl.person.lastName" /> <label
+									for="age">Age</label> <input type="text" class="form-control"
+									id="age" data-ng-model="partialCtrl.person.age" />
+
+								<button type="submit" class="btn btn-primary pull-left"
+									data-ng-click="partialCtrl.submit()">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container"></div>
+</div>
