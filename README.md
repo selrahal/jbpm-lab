@@ -98,5 +98,5 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
     </server>
     ```
 
-4. Inspect Embedded jBPM code
+4. Inspect Embedded jBPM code and switch to use it (hint: CDI)
 5. Run the app and confirm functionality
