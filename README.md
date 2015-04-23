@@ -10,7 +10,6 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 ## Project Structure ##
 * first-class-upgrade : Parent project for dependency management
 * first-class-uprgade-app : The WAR that will expose your REST service
-* first-class-upgrade-kjar : This artifact will hold the definition of the first class upgrade business process
 * first-class-upgrade-model : This artifact will hold the common classes used by all other in the project
 
 ## Prerequisites ##
