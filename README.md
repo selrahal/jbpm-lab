@@ -62,6 +62,37 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 ## Phase 4 (bonus) ##
 1. Rest interface has been deprecated! Change to embedded jbpm now!
 2. Add <repository> element under active profile
+```xml
+       <repository>
+          <id>guvnor-m2-repo</id>
+          <name>BRMS Repository</name>
+          <url>http://localhost:8080/business-central/maven2/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+```
 3. Add <server> element to specify authentication information
+```xml
+    <server>
+      <id>guvnor-m2-repo</id>
+      <username>admin</username>
+      <password>admin</password>
+      <configuration>
+        <wagonProvider>httpclient</wagonProvider>
+        <httpConfiguration>
+          <all>
+            <usePreemptive>true</usePreemptive>
+          </all>
+        </httpConfiguration>
+      </configuration>
+    </server>
+```
 4. Inspect Embedded jBPM code
 5. Run the app and confirm functionality
