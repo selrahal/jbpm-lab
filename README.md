@@ -62,6 +62,7 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 ## Phase 4 (bonus) ##
 1. Rest interface has been deprecated! Change to embedded jbpm now!
 2. Add <repository> element under active profile
+
     ```xml
        <repository>
           <id>guvnor-m2-repo</id>
@@ -78,7 +79,9 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
           </snapshots>
         </repository>
     ```
+
 3. Add <server> element to specify authentication information
+
     ```xml
     <server>
       <id>guvnor-m2-repo</id>
@@ -94,5 +97,6 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
       </configuration>
     </server>
     ```
+
 4. Inspect Embedded jBPM code
 5. Run the app and confirm functionality
