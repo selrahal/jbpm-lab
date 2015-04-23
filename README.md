@@ -4,7 +4,7 @@ Lab material for jBPM
 
 
 ## Background ##
-Your airline company, RedEye, is trying to stay relevant in order to complete with some of the bigger organizations. One of the biggest issue you are currently facing is the slow time to market for changes to your first class upgrade process. Several C-level executives have decided that you will need to offer a mechanism for passengers to attempt a first class upgrade. However they are still deciding the criteria and steps that will be used to either approve or deny their request. Your mission, if you choose to keep your job, is to implement a webservice that is backed by jBPM for these attempts at first class upgrades. The boss wants to see a simlpe functional example during Phase 1, and then an actual decision taking place in Phase 2. Furthermore, after creating the application that will recieve the requests for upgrade you must _not_ undeploy it. This means the changes from Phase 1 to Phase 2 will need to be done without a redeploy!
+Your airline company, RedEye, is trying to stay relevant in order to complete with some of the bigger organizations. One of the biggest issue you are currently facing is the slow time to market for changes to your first class upgrade process. Several C-level executives have decided that you will need to offer a mechanism for passengers to initiate an attempt at a first class upgrade. However they are still deciding the criteria and steps that will be used to either approve or deny their request. Your mission, if you choose to keep your job, is to implement a webservice that is backed by jBPM for these attempts at first class upgrades. The boss wants to see a simlpe functional example during Phase 1, and then an actual decision taking place in Phase 2. Lastly, during Phase 3 we should allow human intervention (from one of our customer service representatives) that will take a declined request and approve it. Furthermore, after creating the application that will recieve the requests for upgrade you must _not_ undeploy it. This means the changes from Phase 1 to Phase 2 to Phase 3 will need to be done without a redeploy!
 
 
 ## Project Structure ##
@@ -43,3 +43,26 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 4. Without undeploying the first-class-upgrade-app, build and deploy the first-class-upgrade-kjar 
 5. Confirm that you can start a new process, and check the logs for the message that was sent to the customer!
 6. Now you can even remove the 1.0.1 deployment and see how the behavior reverts!
+
+## Phase 3 ##
+1. Add a process variable for 'override', should be boolean
+2. Add a human task after the declined log
+3. Set the 'groups' property of the human task equal to 'csr' for customer service reps
+4. Add 'firstname' and 'lastname' to data inputs
+5. Add 'override' to data outputs
+6. Create assignments (you can use MVEL to get properties on a process variable like '#{requestor.firstName}')
+7. Create task form
+8. Add input for first name and last name to task form
+9. Add output for override to task form
+10. Save the task form
+11. Add a gateway after human task that uses the process variable 'override' to either log a hard decline or go to the approval step
+12. Upgrade the project version to 1.0.2 and build & deploy
+13. Add csr to your roles (via EAP)
+14. Practice manually overriding the request, either by approving or denying
+
+## Phase 4 (bonus) ##
+1. Rest interface has been deprecated! Change to embedded jbpm now!
+2. Add <repository> element under active profile
+3. Add <server> element to specify authentication information
+4. Inspect Embedded jBPM code
+5. Run the app and confirm functionality

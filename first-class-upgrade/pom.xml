@@ -71,6 +71,11 @@
 				<version>${kie.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.jbpm</groupId>
+				<artifactId>jbpm-workitems</artifactId>
+				<version>${kie.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.kie</groupId>
 				<artifactId>kie-internal</artifactId>
 				<version>${kie.version}</version>
