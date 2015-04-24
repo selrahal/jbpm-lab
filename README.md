@@ -10,7 +10,7 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 ## Project Structure ##
 * first-class-upgrade : Parent project for dependency management
 * first-class-uprgade-app : The WAR that will expose your REST service
-* first-class-upgrade-model : This artifact will hold the common classes used by all other in the project
+* first-class-upgrade-model : This artifact will hold the common classes used by the client and the process diagram 
 
 ## Prerequisites ##
 1. Install JBoss EAP 6.4
@@ -29,6 +29,7 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 6. Create new project ('First Class Upgrades') with GAV com.rhc.jbpm.redeye:first-class-upgrade-kjar:1.0.0
 7. Add dependency in first-class-upgrade-kjar on first-class-upgrade-model
 8. Set the deployment type to 'PER_REQUEST' in the deployment descriptor.
+9. Make sure to add the remote class 'com.rhc.jbpm.redeye.model.Person' to the deployment descriptor
 9. Create 'FirstClassUpgrade' business process with Start->Script(Log)->End
 * Should have a process variable named 'requestor' with type com.rhc.jbpm.redeye.model.Person
 * Log task should print out the value of this process variable
@@ -100,3 +101,4 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 
 4. Inspect Embedded jBPM code and switch to use it (hint: CDI)
 5. Run the app and confirm functionality
+6. Does the human task interaction still work? Why (not)?
