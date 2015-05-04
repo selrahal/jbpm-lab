@@ -13,6 +13,9 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 * first-class-upgrade-model : This artifact will hold the common classes used by the client and the process diagram 
 
 ## Prerequisites ##
+1. Get JDK 1.7
+2. Install Maven
+3. Install Git
 1. Install JBoss EAP 6.4
 2. Install BPMS 6.1.0 into EAP 6.4
 3. Ensure you can start up, and log into, BPMS 6.1.0
@@ -47,18 +50,17 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 ## Phase 3 ##
 1. Add a process variable for 'override', should be boolean
 2. Add a human task after the declined log
-3. Set the 'groups' property of the human task equal to 'csr' for customer service reps
-4. Add 'firstname' and 'lastname' to data inputs
+3. Set the 'actor' property of the human task equal to 'bpmsAdmin'
+4. Add 'person' to data inputs
 5. Add 'override' to data outputs
-6. Create assignments (you can use MVEL to get properties on a process variable like '#{requestor.firstName}')
+6. Create assignments
 7. Create task form
-8. Add input for first name and last name to task form
+8. Add input for person to task form
 9. Add output for override to task form
 10. Save the task form
 11. Add a gateway after human task that uses the process variable 'override' to either log a hard decline or go to the approval step
 12. Upgrade the project version to 1.0.2 and build & deploy
-13. Add csr to your roles (via EAP)
-14. Practice manually overriding the request, either by approving or denying
+13. Practice manually overriding the request, either by approving or denying
 
 ## Phase 4 (bonus) ##
 1. Rest interface has been deprecated! Change to embedded jbpm now!
