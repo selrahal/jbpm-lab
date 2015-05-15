@@ -30,6 +30,7 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 ## Phase 1 ##
 1. Navigate to parent redeye project
 2. Execute 'mvn clean install' in the first-class-upgrade project
+  * Update the RestRuntimeEngineProvider class if you did not use admin:abcd1234! for authentication
 3. Upload first-class-upgrade-model jar to BPMS
 4. Create OU in BPMS (For the 'RedEye' organization) with default group com.rhc.jbpm.redeye
 5. Create repo in BPMS (For the 'FirstClass' team)
