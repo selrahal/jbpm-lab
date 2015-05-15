@@ -24,6 +24,7 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
   * Pass: abcd1234!
 6. Ensure you can start up, and log into, BPMS 6.1.0
 7. Download the BPMS 6.1.0 maven repository and unzip it into your local maven cache (default ~/.m2/repository)
+7. Download the EAP 6.4.0 maven repository and unzip it into your local maven cache (default ~/.m2/repository)
 8. Clone this project
 
 
