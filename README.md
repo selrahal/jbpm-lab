@@ -17,11 +17,11 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 2. Install Maven
 3. Install Git
 4. Install JBoss EAP 6.4
-* User: admin
-* Pass: abcd1234!
+  * User: admin
+  * Pass: abcd1234!
 5. Install BPMS 6.1.0 into EAP 6.4
-* User: bpmsAdmin
-* Pass: abcd1234!
+  * User: bpmsAdmin
+  * Pass: abcd1234!
 6. Ensure you can start up, and log into, BPMS 6.1.0
 7. Download the BPMS 6.1.0 maven repository and unzip it into your local maven cache (default ~/.m2/repository)
 8. Clone this project
@@ -38,14 +38,14 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 8. Set the deployment type to 'PER_REQUEST' in the deployment descriptor, save the project
 9. Make sure to add the remote class 'com.rhc.jbpm.redeye.model.Person' to the deployment descriptor, save the project
 9. Create 'FirstClassUpgrade' business process with Start->Script(Log)->End
-* Should have a process variable named 'requestor' with type 'com.rhc.jbpm.redeye.model.Person'
-* Log task should print out the value of this process variable
+  * Should have a process variable named 'requestor' with type 'com.rhc.jbpm.redeye.model.Person'
+  * Log task should print out the value of this process variable
 10. Build and Deploy the first-class-upgrade-kjar.
 11. Deploy first-class-upgrade-app to EAP and test a request by visiting the context root and inspecting the logs
 
 ## Phase 2 ##
 1. Alter your diagram to include an exclusive gateway that will be used to decide whether or not the upgrade request is approved
-* Use the expression 'return requestor.getAge() > 30;' for the accept path and the opposite for the deny path
+  * Use the expression 'return requestor.getAge() > 30;' for the accept path and the opposite for the deny path
 2. For the approve case and the deny case include a node that will log the appropriate message
 3. Upgrade the version of first-class-upgrade-kjar to 1.0.1
 4. Without undeploying the first-class-upgrade-app, build and deploy the first-class-upgrade-kjar 
@@ -55,24 +55,24 @@ Your airline company, RedEye, is trying to stay relevant in order to complete wi
 ## Phase 3 ##
 1. Add a process variable for 'override', should be Boolean
 2. Add a human task after the declined logging message
-* Set the 'actor' property of the human task equal to 'bpmsAdmin'
-* Add 'person' to data inputs with type 'com.rhc.jbpm.redeye.model.Person'
-* Add 'override' to data outputs with Boolean type
-* Create assignments for person input and override output
-* Set the 'Task Name' attribute to 'Manual Override'
+  * Set the 'actor' property of the human task equal to 'bpmsAdmin'
+  * Add 'person' to data inputs with type 'com.rhc.jbpm.redeye.model.Person'
+  * Add 'override' to data outputs with Boolean type
+  * Create assignments for person input and override output
+  * Set the 'Task Name' attribute to 'Manual Override'
 3. Create task form using graphical modeler 
-* Add data holder for person to task form
- * id: person
- * input id: person
- * type: com.rhc.jbpm.redeye.model.Person
-* Add data holder for override to task form
- * id: override 
- * output id: override
- * type: Boolean
-* Add fields by origin
- * Add the person field (and all properties) to the form
- * Add the override field to the form
-* Save the task form
+  * Add data holder for person to task form
+    * id: person
+    * input id: person
+    * type: com.rhc.jbpm.redeye.model.Person
+  * Add data holder for override to task form
+    * id: override 
+    * output id: override
+    * type: Boolean
+  * Add fields by origin
+    * Add the person field (and all properties) to the form
+    * Add the override field to the form
+  * Save the task form
 11. Add a gateway after human task that uses the process variable 'override' to either log a hard decline or go to the approval step
 12. Save the business process
 12. Upgrade the project version to 1.0.2 , save, and build & deploy
